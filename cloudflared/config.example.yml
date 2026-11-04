@@ -1,0 +1,13 @@
+# Copia este archivo como cloudflared/config.yml después de crear el túnel.
+# El UUID y la ruta de credenciales los entrega:
+#   tools\cloudflared.exe tunnel create campuscode
+
+tunnel: REEMPLAZA-CON-EL-UUID-DEL-TUNEL
+credentials-file: C:\Users\Admin\.cloudflared\REEMPLAZA-CON-EL-UUID-DEL-TUNEL.json
+
+ingress:
+  - hostname: campuscode.com
+    service: http://localhost:4000
+  - hostname: www.campuscode.com
+    service: http://localhost:4000
+  - service: http_status:404

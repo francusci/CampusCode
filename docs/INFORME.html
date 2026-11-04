@@ -1,0 +1,422 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>CampusCode · Informe de presentación</title>
+<style>
+  @page {
+    size: A4;
+    margin: 17mm 15mm 17mm 15mm;
+  }
+
+  :root {
+    --navy: #07152c;
+    --blue: #2563eb;
+    --muted: #64748b;
+    --line: #dbe3ef;
+    --paper: #ffffff;
+    --soft: #f8fafc;
+  }
+
+  * { box-sizing: border-box; }
+
+  html {
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+
+  body {
+    margin: 0;
+    font-family: "Segoe UI", "Instrument Sans", Arial, sans-serif;
+    font-size: 10.1pt;
+    line-height: 1.55;
+    color: #1f2937;
+    background: var(--paper);
+  }
+
+  .cover {
+    page-break-after: always;
+    padding-top: 28mm;
+  }
+
+  .cover h1 {
+    margin: 0 0 5mm;
+    font-size: 44pt;
+    line-height: 1;
+    letter-spacing: -1.6px;
+    color: var(--navy);
+  }
+
+  .cover h2 {
+    margin: 0 0 11mm;
+    padding: 0;
+    border: 0;
+    font-size: 19pt;
+    font-weight: 500;
+    color: var(--blue);
+  }
+
+  .cover p {
+    margin: 1.6mm 0;
+    font-size: 10.4pt;
+    text-align: left;
+  }
+
+  .cover strong { color: var(--navy); }
+
+  .cover hr {
+    width: 42mm;
+    margin: 12mm 0;
+    border: 0;
+    border-top: 2.5px solid var(--blue);
+  }
+
+  .cover blockquote {
+    margin-top: 16mm;
+    padding: 6mm 7mm;
+    border-left: 4px solid var(--blue);
+    background: var(--soft);
+    color: #475569;
+    font-size: 9.4pt;
+  }
+
+  .cover blockquote p { margin: 0; }
+
+  .toc {
+    page-break-after: always;
+  }
+
+  .toc h2 {
+    margin-top: 0;
+    border-bottom: 2px solid var(--navy);
+    padding-bottom: 3mm;
+  }
+
+  .toc ol {
+    margin: 5mm 0 0 6mm;
+    padding: 0;
+    font-size: 10.2pt;
+  }
+
+  .toc li {
+    margin: 0 0 2.1mm;
+    padding-left: 2mm;
+  }
+
+  .toc a {
+    color: #1f2937;
+    text-decoration: none;
+  }
+
+  h2 {
+    margin: 9mm 0 3.5mm;
+    padding-bottom: 1.8mm;
+    border-bottom: 1.5px solid var(--line);
+    font-size: 15.5pt;
+    line-height: 1.2;
+    color: var(--navy);
+    page-break-after: avoid;
+  }
+
+  h3 {
+    margin: 6.5mm 0 2mm;
+    font-size: 11.8pt;
+    color: var(--navy);
+    page-break-after: avoid;
+  }
+
+  h4 {
+    margin: 5mm 0 1.8mm;
+    font-size: 10.6pt;
+    color: var(--navy);
+    page-break-after: avoid;
+  }
+
+  p {
+    margin: 0 0 2.8mm;
+    text-align: justify;
+  }
+
+  ul, ol {
+    margin: 0 0 3mm 5mm;
+    padding-left: 5mm;
+  }
+
+  li {
+    margin-bottom: 1.1mm;
+  }
+
+  blockquote {
+    margin: 3.5mm 0;
+    padding: 3mm 4mm;
+    border-left: 3px solid #93c5fd;
+    background: var(--soft);
+    color: #334155;
+  }
+
+  blockquote p { margin: 0; }
+
+  table {
+    width: 100%;
+    margin: 3mm 0 5mm;
+    border-collapse: collapse;
+    font-size: 8.25pt;
+    line-height: 1.38;
+  }
+
+  thead { display: table-header-group; }
+
+  tr { page-break-inside: avoid; }
+
+  th {
+    padding: 2mm 2.2mm;
+    border: 1px solid var(--navy);
+    background: var(--navy);
+    color: #ffffff;
+    text-align: left;
+    font-weight: 600;
+  }
+
+  td {
+    padding: 1.8mm 2.2mm;
+    border: 1px solid var(--line);
+    vertical-align: top;
+  }
+
+  tbody tr:nth-child(even) { background: #f8fafc; }
+
+  code {
+    padding: 0.3mm 1.2mm;
+    border-radius: 2px;
+    background: #eef2f7;
+    font-family: "Cascadia Code", "JetBrains Mono", Consolas, monospace;
+    font-size: 8.5pt;
+  }
+
+  pre {
+    margin: 2.5mm 0 4mm;
+    padding: 3.5mm 4mm;
+    border-radius: 2mm;
+    background: #0b1220;
+    color: #e2e8f0;
+    white-space: pre-wrap;
+    overflow-wrap: anywhere;
+    page-break-inside: avoid;
+    font-size: 8.2pt;
+    line-height: 1.45;
+  }
+
+  pre code {
+    padding: 0;
+    background: transparent;
+    color: inherit;
+    font-size: inherit;
+  }
+
+  a {
+    color: #1d4ed8;
+    text-decoration: none;
+  }
+
+  hr {
+    margin: 5mm 0;
+    border: 0;
+    border-top: 1px solid var(--line);
+  }
+
+  strong { color: #0f172a; }
+
+  .toc, main { max-width: 100%; }
+</style>
+</head>
+<body>
+  <section class="cover">
+    <h1 id="campuscode">CampusCode</h1>
+<h2 id="informe-de-presentacion">Informe de presentación</h2>
+<p><strong>Versión:</strong> 2.0 <strong>Fecha:</strong> 1 de noviembre de 2026 <strong>Equipo:</strong> CampusCode · Universidad Mayor de Cartagena <strong>Estado:</strong> demostración full-stack funcional, publicada en una URL temporal con HTTPS y con el asistente de IA en modo live verificado.</p>
+<blockquote><p><strong>Nota de transparencia:</strong> CampusCode es un proyecto académico de demostración. Las empresas, retos, cuentas, equipos, préstamos, vacantes, pruebas y métricas iniciales son ficticios y están identificados como tales en la interfaz. No representan alianzas, estudiantes, procesos de selección ni resultados reales. La plataforma no ofrece tutorías, tutores, reservas de sesiones ni pagos por tutoría.</p></blockquote>
+<hr>
+  </section>
+  <section class="toc">
+    <h2>Contenido</h2>
+    <ol><li><a href="#ficha-rapida">Ficha rápida</a></li><li><a href="#1-resumen-ejecutivo">1. Resumen ejecutivo</a></li><li><a href="#2-contexto-y-problema">2. Contexto y problema</a></li><li><a href="#3-objetivos">3. Objetivos</a></li><li><a href="#4-la-solucion-modulos-implementados">4. La solución: módulos implementados</a></li><li><a href="#5-experiencia-por-rol">5. Experiencia por rol</a></li><li><a href="#6-arquitectura-y-tecnologia">6. Arquitectura y tecnología</a></li><li><a href="#7-seguridad-y-privacidad">7. Seguridad y privacidad</a></li><li><a href="#8-asistente-de-ia">8. Asistente de IA</a></li><li><a href="#9-datos-de-demostracion">9. Datos de demostración</a></li><li><a href="#10-pruebas-y-calidad">10. Pruebas y calidad</a></li><li><a href="#11-despliegue-y-estado-actual">11. Despliegue y estado actual</a></li><li><a href="#12-limitaciones-y-riesgos">12. Limitaciones y riesgos</a></li><li><a href="#13-hoja-de-ruta">13. Hoja de ruta</a></li><li><a href="#14-conclusiones">14. Conclusiones</a></li><li><a href="#15-guion-de-presentacion-5-7-minutos">15. Guion de presentación (5–7 minutos)</a></li><li><a href="#16-preguntas-frecuentes-de-la-defensa">16. Preguntas frecuentes de la defensa</a></li><li><a href="#17-anexos">17. Anexos</a></li></ol>
+  </section>
+  <main>
+    <h2 id="ficha-rapida">Ficha rápida</h2>
+<table><thead><tr><th>Aspecto</th><th>Detalle</th></tr></thead><tbody><tr><td>Producto</td><td>Plataforma académica full-stack para practicar, organizar materias, registrar préstamos de PCs y conectar con empresas.</td></tr><tr><td>Usuarios</td><td>Estudiantes, empresas y administración.</td></tr><tr><td>Funciones principales</td><td>Banco de ejercicios, asistente de IA, progreso, materias personales, préstamo de computadores, retos, vacantes y pruebas técnicas.</td></tr><tr><td>Stack</td><td>React 19, TypeScript, Vite, Tailwind CSS, Node.js, Express 5 y SQLite.</td></tr><tr><td>IA</td><td>Gemini 3.5 Flash mediante API compatible con OpenAI; clave solo en el servidor.</td></tr><tr><td>Datos</td><td>Semilla de demostración: 7 carreras, 20 materias, 43 ejercicios, 12 computadores, 7 retos, 7 vacantes y 6 pruebas técnicas.</td></tr><tr><td>Calidad</td><td>14/14 pruebas de integración, TypeScript sin errores, ESLint sin errores y build de producción correcto.</td></tr><tr><td>Demo</td><td>URL temporal de Cloudflare Tunnel; requiere que el servidor y el túnel estén encendidos.</td></tr><tr><td>Dominio propio</td><td><code>campuscode.com</code> está registrado en Hover; falta mover el DNS a Cloudflare para publicarlo de forma permanente.</td></tr></tbody></table>
+<hr>
+<h2 id="1-resumen-ejecutivo">1. Resumen ejecutivo</h2>
+<p>CampusCode es una plataforma académica que reúne en un solo lugar la práctica, el seguimiento del aprendizaje, la organización personal de materias, el préstamo de equipos y el contacto con oportunidades empresariales.</p>
+<p>El proyecto nace de una necesidad concreta: el estudiante suele estudiar con materiales dispersos, sin un registro claro de su avance y con pocas oportunidades de enfrentarse a retos reales. Al mismo tiempo, las empresas tienen dificultades para evaluar habilidades prácticas de talento junior y las instituciones gestionan procesos académicos y de préstamo de equipos de forma fragmentada.</p>
+<p>CampusCode responde con una aplicación full-stack funcional, no con una maqueta. Hoy se puede recorrer con tres roles, crear materias personales, resolver ejercicios, pedir un computador, postularse a un reto, publicar una vacante, crear una prueba técnica y conversar con un asistente de IA real. La autenticación y las autorizaciones se validan en el servidor.</p>
+<p>La entrega es honesta sobre su alcance: es una <strong>demostración funcional</strong> con datos ficticios, publicada en una URL temporal. Todavía no es un despliegue de producción a escala. Para llegar allí faltan el dominio definitivo, PostgreSQL/Supabase, copias de seguridad, correo transaccional, observabilidad y una auditoría de seguridad y accesibilidad.</p>
+<hr>
+<h2 id="2-contexto-y-problema">2. Contexto y problema</h2>
+<h3 id="2-1-el-problema-del-estudiante">2.1 El problema del estudiante</h3>
+<ul><li>Los contenidos, ejercicios y apuntes viven en plataformas distintas.</li><li>Es difícil saber qué se ha practicado, qué falta y cómo avanza el aprendizaje.</li><li>Muchas herramientas no conectan la práctica con retos o oportunidades reales.</li><li>La organización de materias, horarios y recursos es manual.</li><li>El acceso a equipos de cómputo puede ser un cuello de botella dentro de la institución.</li></ul>
+<h3 id="2-2-el-problema-de-la-empresa">2.2 El problema de la empresa</h3>
+<ul><li>Evaluar talento junior solo con hoja de vida es costoso y poco preciso.</li><li>Las pruebas técnicas suelen gestionarse por fuera de la plataforma académica.</li><li>No existe una señal práctica y verificable del trabajo del estudiante.</li><li>Publicar una vacante o un reto requiere canales dispersos.</li></ul>
+<h3 id="2-3-el-problema-de-la-institucion">2.3 El problema de la institución</h3>
+<ul><li>Los procesos de préstamo de equipos se llevan en hojas de cálculo o en papel.</li><li>No hay una vista unificada de usuarios, roles, catálogo y actividad.</li><li>La información académica y la empleabilidad se gestionan por separado.</li></ul>
+<h3 id="2-4-la-oportunidad">2.4 La oportunidad</h3>
+<p>Integrar en una sola experiencia:</p>
+<ol><li><strong>Aprender:</strong> banco de ejercicios y asistente académico.</li><li><strong>Organizar:</strong> materias personales, progreso y objetivos.</li><li><strong>Acceder:</strong> préstamo de computadores.</li><li><strong>Conectar:</strong> retos, vacantes y pruebas técnicas de empresas.</li></ol>
+<hr>
+<h2 id="3-objetivos">3. Objetivos</h2>
+<h3 id="3-1-objetivo-general">3.1 Objetivo general</h3>
+<p>Construir una plataforma académica full-stack que centralice la práctica, el seguimiento del aprendizaje y la conexión con oportunidades empresariales, con autenticación y autorización verificadas en el servidor.</p>
+<h3 id="3-2-objetivos-especificos">3.2 Objetivos específicos</h3>
+<ul><li>Ofrecer un banco de ejercicios filtrable por carrera, materia, tema, dificultad y tipo de respuesta.</li><li>Permitir que cada estudiante organice sus propias materias y consulte su progreso.</li><li>Gestionar el préstamo y la devolución de computadores por sala.</li><li>Publicar retos, vacantes y pruebas técnicas desde cuentas de empresa.</li><li>Validar roles y propiedad de recursos en cada endpoint privado.</li><li>Integrar un asistente de IA que explique procedimientos sin reemplazar al docente.</li><li>Mantener datos de demostración claramente identificados y evitar métricas inventadas.</li><li>Documentar el estado real, las pruebas y los pendientes de producción.</li></ul>
+<hr>
+<h2 id="4-la-solucion-modulos-implementados">4. La solución: módulos implementados</h2>
+<table><thead><tr><th>Módulo</th><th>Qué resuelve</th><th>Evidencia</th></tr></thead><tbody><tr><td>Sitio público y catálogo</td><td>Presenta la propuesta, carreras, materias, ejercicios, retos y vacantes.</td><td>Rutas <code>/</code>, <code>/catalogo</code>, <code>/carreras/:slug</code>, <code>/empresas</code>.</td></tr><tr><td>Banco de ejercicios</td><td>Práctica con filtros, pistas, procedimiento, favoritos y progreso.</td><td>43 ejercicios en 7 carreras, 20 materias y 40 temas.</td></tr><tr><td>Asistente académico</td><td>Explica conceptos paso a paso y conserva historial en cuentas autenticadas.</td><td>Modo visitante y conversaciones privadas; IA live con Gemini 3.5 Flash.</td></tr><tr><td>Progreso académico</td><td>Muestra ejercicios completados, actividad, favoritos, postulaciones y objetivos.</td><td>Panel del estudiante y página <code>/mi-progreso</code>.</td></tr><tr><td>Materias personales</td><td>Cada estudiante construye su propio tablero, separado del catálogo global.</td><td><code>/materias</code> inicia vacío; alta y baja con validación de propiedad.</td></tr><tr><td>Préstamo de computadores</td><td>Registra entrada, salida, estado del equipo y disponibilidad.</td><td>12 equipos de demostración, préstamos activos e historial.</td></tr><tr><td>Retos de empresas</td><td>Publicación, postulación, entregables por enlace y cambio de estado.</td><td>Panel de empresa y catálogo público de retos.</td></tr><tr><td>Portal de reclutamiento</td><td>Vacantes y pruebas técnicas con preguntas abiertas o de opción múltiple.</td><td>7 vacantes y 6 pruebas de demostración.</td></tr><tr><td>Administración</td><td>Gestiona usuarios, catálogo, ejercicios, retos y reportes.</td><td>Rutas <code>/admin/*</code> protegidas por rol.</td></tr><tr><td>Autenticación y seguridad</td><td>Sesiones, roles, propiedad de recursos y validación de entrada.</td><td>bcrypt, JWT en cookie <code>httpOnly</code>, CSRF por origen y rate limit.</td></tr></tbody></table>
+<h3 id="4-1-lo-que-no-incluye-por-decision-de-alcance">4.1 Lo que no incluye, por decisión de alcance</h3>
+<ul><li>Tutorías, tutores, reservas, horarios o pagos por sesión.</li><li>Un ATS completo con seguimiento de candidaturas.</li><li>Calificación automática de pruebas técnicas desde la cuenta del estudiante.</li><li>Correos transaccionales, carga de archivos o pasarela de pagos.</li><li>Métricas reales de uso o analítica de producto.</li><li>Aplicación móvil nativa.</li></ul>
+<p>Estas ausencias son deliberadas y están documentadas para no atribuir al proyecto funciones que no existen.</p>
+<hr>
+<h2 id="5-experiencia-por-rol">5. Experiencia por rol</h2>
+<table><thead><tr><th>Rol</th><th>Qué puede hacer</th></tr></thead><tbody><tr><td>Estudiante</td><td>Registrarse, iniciar sesión, explorar el catálogo, resolver ejercicios, guardar favoritos, ver su progreso, crear objetivos, agregar materias personales, pedir y devolver computadores, postularse a retos y conversar con el asistente.</td></tr><tr><td>Empresa</td><td>Iniciar sesión, administrar su perfil, crear y editar retos propios, revisar postulaciones, publicar vacantes y crear pruebas técnicas con preguntas y puntaje mínimo.</td></tr><tr><td>Administración</td><td>Ver el resumen del sistema, buscar usuarios, cambiar roles y estado, gestionar carreras y materias, publicar u ocultar ejercicios, moderar retos y revisar reportes.</td></tr></tbody></table>
+<p>La protección no depende de ocultar botones: cada endpoint privado valida sesión, rol y, cuando corresponde, la propiedad del recurso.</p>
+<hr>
+<h2 id="6-arquitectura-y-tecnologia">6. Arquitectura y tecnología</h2>
+<h3 id="6-1-vista-general">6.1 Vista general</h3>
+<pre><code class="language-text">Navegador
+  React 19 + TypeScript + Vite
+          │
+          │ HTTPS / JSON
+          ▼
+Servidor Express 5
+  ├── API REST con validación y autorización
+  ├── Servicio de archivos estáticos (dist/)
+  ├── SQLite mediante node:sqlite
+  └── Proveedor de IA (Gemini) — solo desde el servidor</code></pre>
+<h3 id="6-2-stack">6.2 Stack</h3>
+<table><thead><tr><th>Capa</th><th>Tecnología</th></tr></thead><tbody><tr><td>Interfaz</td><td>React 19, TypeScript 5.9, Vite 8, React Router 7</td></tr><tr><td>Estilos</td><td>Tailwind CSS 4, componentes propios, Phosphor Icons, KaTeX</td></tr><tr><td>Servidor</td><td>Node.js 24+, Express 5</td></tr><tr><td>Base de datos</td><td>SQLite con <code>node:sqlite</code>, sin ORM</td></tr><tr><td>Autenticación</td><td>bcrypt (12 rondas) + JWT en cookie <code>httpOnly</code>, <code>SameSite=Lax</code></td></tr><tr><td>IA</td><td>API compatible con OpenAI; Gemini 3.5 Flash</td></tr><tr><td>Pruebas</td><td><code>node:test</code> + <code>fetch</code> contra Express y una base temporal</td></tr></tbody></table>
+<h3 id="6-3-decisiones-de-diseno">6.3 Decisiones de diseño</h3>
+<ul><li><strong>Monolito desplegable:</strong> una sola aplicación sirve la API y el build de React. Reduce infraestructura y facilita la demo.</li><li><strong>SQLite para la demo:</strong> no requiere un servicio externo y permite arrancar con <code>npm install</code>. El esquema PostgreSQL queda como referencia de migración.</li><li><strong>Sin ORM:</strong> consultas SQL parametrizadas y control explícito del esquema.</li><li><strong>IA en el servidor:</strong> la clave nunca llega al navegador ni al bundle.</li><li><strong>Datos de demostración deterministas:</strong> <code>npm run seed:reset</code> restaura el estado inicial.</li><li><strong>Autorización en el servidor:</strong> la interfaz puede ocultar acciones, pero la decisión final siempre está en Express.</li></ul>
+<hr>
+<h2 id="7-seguridad-y-privacidad">7. Seguridad y privacidad</h2>
+<h3 id="7-1-medidas-implementadas">7.1 Medidas implementadas</h3>
+<ul><li>Contraseñas con bcrypt de 12 rondas.</li><li>JWT firmado en cookie <code>httpOnly</code>, <code>SameSite=Lax</code> y <code>Secure</code> en producción.</li><li>Roles <code>student</code>, <code>company</code> y <code>admin</code> comprobados en cada endpoint privado.</li><li>Relectura de la sesión y del estado activo del usuario desde la base.</li><li>Validación centralizada de entrada y consultas SQL parametrizadas.</li><li>Guardia de origen para métodos mutantes (CSRF).</li><li>Rate limit en login, registro y mensajes de IA.</li><li>Cabeceras de seguridad, HSTS y CSP en producción.</li><li>Límite de cuerpo de 120 KB y errores internos sin stack trace.</li><li>Clave de IA solo en variables de entorno del servidor.</li></ul>
+<h3 id="7-2-privacidad">7.2 Privacidad</h3>
+<ul><li>Los datos iniciales son ficticios y están etiquetados como demostración.</li><li>Las conversaciones autenticadas se guardan en la base local y solo las ve su dueño.</li><li>El modo visitante del asistente no persiste la conversación.</li><li>No se deben introducir datos personales reales en esta demo.</li><li>Antes de un uso institucional se requiere política de retención, consentimiento y proveedor autorizado.</li></ul>
+<h3 id="7-3-limites-reconocidos">7.3 Límites reconocidos</h3>
+<ul><li>El rate limit es en memoria: funciona en una instancia, no en un clúster.</li><li>No se ejecutó un pentest ni un escaneo de dependencias.</li><li>No hay auditoría automatizada de accesibilidad.</li><li>La seguridad de producción completa requiere backups, monitoreo y revisión legal.</li></ul>
+<hr>
+<h2 id="8-asistente-de-ia">8. Asistente de IA</h2>
+<h3 id="8-1-estado-actual">8.1 Estado actual</h3>
+<p>El asistente está conectado a <strong>Gemini 3.5 Flash</strong> mediante el endpoint compatible con OpenAI de Google. La clave se configura en <code>.env.production</code> y se usa únicamente en el servidor.</p>
+<p>Estado verificado:</p>
+<pre><code class="language-json">{
+  &quot;configured&quot;: true,
+  &quot;mode&quot;: &quot;live&quot;,
+  &quot;provider&quot;: &quot;openai-compatible&quot;,
+  &quot;model&quot;: &quot;gemini-3.5-flash&quot;,
+  &quot;message&quot;: &quot;Asistente conectado a un proveedor compatible con la API de OpenAI.&quot;
+}</code></pre>
+<p>La interfaz muestra <strong>“IA conectada”</strong> y etiqueta cada respuesta como <strong>“Respuesta generada por IA”</strong>.</p>
+<h3 id="8-2-como-funciona">8.2 Cómo funciona</h3>
+<ol><li>El navegador envía la pregunta a <code>/api/ai/guest</code> o a <code>/api/conversations/:id/messages</code>.</li><li>El servidor valida, limita la frecuencia y construye el historial.</li><li>Si hay clave y <code>AI_MODE=live</code>, llama al proveedor externo.</li><li>Si no hay credenciales, responde con una guía local determinista etiquetada como <strong>“Guía local · no generada por IA”</strong>.</li><li>Si el proveedor falla, devuelve un error claro; no inventa una respuesta.</li></ol>
+<h3 id="8-3-reglas-del-asistente">8.3 Reglas del asistente</h3>
+<ul><li>Responde en español claro y con ejemplos.</li><li>Explica el procedimiento antes del resultado.</li><li>Prioriza el aprendizaje autónomo.</li><li>No inventa fuentes, normas, datos institucionales ni estadísticas.</li><li>Aclara que la orientación en salud, derecho o finanzas es educativa.</li><li>No ofrece tutorías, sesiones, reservas ni reuniones.</li><li>Si no sabe algo, lo dice.</li></ul>
+<h3 id="8-4-costos-y-limites">8.4 Costos y límites</h3>
+<ul><li>Cada consulta live consume tokens del proveedor.</li><li>Se configuró <code>AI_MAX_TOKENS=4096</code> porque Gemini 3.5 Flash usa razonamiento interno y con 900 tokens las respuestas se cortaban.</li><li>Se debe definir un límite de gasto y una política de uso antes de abrir la plataforma a muchos usuarios.</li><li>El asistente puede equivocarse; no reemplaza la orientación docente.</li></ul>
+<hr>
+<h2 id="9-datos-de-demostracion">9. Datos de demostración</h2>
+<table><thead><tr><th>Dato</th><th>Cantidad</th><th>Tratamiento</th></tr></thead><tbody><tr><td>Carreras</td><td>7</td><td>Catálogo de ejemplo</td></tr><tr><td>Materias</td><td>20</td><td>Catálogo de ejemplo</td></tr><tr><td>Temas</td><td>40</td><td>Catálogo de ejemplo</td></tr><tr><td>Ejercicios</td><td>43</td><td>Contenido original de demostración</td></tr><tr><td>Retos</td><td>7</td><td><code>is_demo = 1</code>; algunos en borrador o cerrados</td></tr><tr><td>Empresas</td><td>5</td><td>Ficticias, etiquetadas como demostración</td></tr><tr><td>Usuarios</td><td>7</td><td>Cuentas de demostración</td></tr><tr><td>Computadores</td><td>12</td><td>Equipos ficticios en tres salas</td></tr><tr><td>Préstamos</td><td>4</td><td>Activos e históricos de ejemplo</td></tr><tr><td>Vacantes</td><td>7</td><td>6 abiertas y 1 en borrador</td></tr><tr><td>Pruebas técnicas</td><td>6</td><td>5 publicadas y 1 en borrador</td></tr></tbody></table>
+<h3 id="9-1-cuentas-de-demostracion">9.1 Cuentas de demostración</h3>
+<table><thead><tr><th>Rol</th><th>Correo</th><th>Contraseña</th></tr></thead><tbody><tr><td>Estudiante</td><td><code>estudiante@campuscode.co</code></td><td><code>Campus123!</code></td></tr><tr><td>Empresa</td><td><code>empresa@campuscode.co</code></td><td><code>Campus123!</code></td></tr><tr><td>Administración</td><td><code>admin@campuscode.co</code></td><td>Contraseña rotada; no se incluye en este informe</td></tr></tbody></table>
+<p>Las empresas adicionales (<code>aurora@</code>, <code>legal@</code>, <code>pacifico@</code>, <code>eco@campuscode.co</code>) usan la misma contraseña de demostración.</p>
+<hr>
+<h2 id="10-pruebas-y-calidad">10. Pruebas y calidad</h2>
+<h3 id="10-1-resultados-verificados">10.1 Resultados verificados</h3>
+<table><thead><tr><th>Comprobación</th><th>Resultado</th></tr></thead><tbody><tr><td><code>npm run typecheck</code></td><td>Correcto, sin errores</td></tr><tr><td><code>npm run lint</code></td><td>0 errores, 19 advertencias de estilo</td></tr><tr><td><code>npm test</code></td><td>14/14 pruebas aprobadas</td></tr><tr><td><code>npm run build</code></td><td>Correcto; bundle principal de 1,27 MB con advertencia de tamaño</td></tr><tr><td>Rutas públicas y paneles</td><td>Verificados en Chromium sin errores de consola</td></tr><tr><td>Responsive</td><td>390 px, 820 px y 1440 px sin scroll horizontal de página</td></tr><tr><td>IA live</td><td>Verificada con Gemini 3.5 Flash en la URL pública</td></tr><tr><td>Materias personales</td><td>Alta, duplicado bloqueado y baja verificados</td></tr><tr><td>Préstamo de PCs</td><td>Registro, préstamo activo, cierre y liberación verificados</td></tr><tr><td>Vacantes y pruebas</td><td>CRUD de empresa y vista pública sin respuestas correctas</td></tr><tr><td>Autorización</td><td>Roles y propiedad de recursos verificados en el servidor</td></tr></tbody></table>
+<h3 id="10-2-pruebas-de-integracion">10.2 Pruebas de integración</h3>
+<p>La suite cubre:</p>
+<ol><li>Contrato live de proveedor compatible con OpenAI.</li><li>Contrato live de la API nativa de Anthropic.</li><li>Salud pública y catálogo.</li><li>Login, cookie <code>httpOnly</code> y sesión.</li><li>Registro, roles y cambios de estado del administrador.</li><li>Autorización por rol.</li><li>Favoritos, progreso y objetivos.</li><li>Postulación a reto y duplicados.</li><li>Propiedad de retos entre empresas.</li><li>Materias personales y préstamo de computadores.</li><li>Vacantes, pruebas y gestión por empresa.</li><li>Administración de catálogo, ejercicios y reportes.</li><li>Guía local sin credenciales.</li><li>Protección de origen para peticiones mutantes.</li></ol>
+<h3 id="10-3-lo-que-no-se-probo">10.3 Lo que no se probó</h3>
+<ul><li>Migración real a PostgreSQL/Supabase.</li><li>Carga, estrés y concurrencia.</li><li>Matriz completa de navegadores y dispositivos físicos.</li><li>Auditoría automatizada de accesibilidad.</li><li>Pentest o escaneo de dependencias.</li><li>Rate limit distribuido entre varias instancias.</li><li>Otros proveedores de IA reales distintos de Gemini.</li></ul>
+<hr>
+<h2 id="11-despliegue-y-estado-actual">11. Despliegue y estado actual</h2>
+<h3 id="11-1-desarrollo-local">11.1 Desarrollo local</h3>
+<pre><code class="language-powershell">npm install
+npm run seed:reset
+npm run dev</code></pre>
+<ul><li>API: <code>http://localhost:4000</code></li><li>Interfaz: <code>http://localhost:5173</code></li></ul>
+<h3 id="11-2-produccion-local">11.2 Producción local</h3>
+<pre><code class="language-powershell">npm run build
+npm run start:production</code></pre>
+<p>Express sirve <code>dist/</code> y aplica <code>NODE_ENV=production</code>, cookie <code>Secure</code>, HSTS y CSP.</p>
+<h3 id="11-3-url-publica-temporal">11.3 URL pública temporal</h3>
+<p>Mientras el DNS de <code>campuscode.com</code> no esté activo en Cloudflare, la demo se publica con un túnel rápido:</p>
+<pre><code class="language-text">https://mirrors-sherman-interpretation-web.trycloudflare.com</code></pre>
+<p><strong>Limitaciones:</strong> la URL cambia si se reinicia el túnel y solo funciona mientras este PC, el servidor y <code>cloudflared</code> estén encendidos. No sustituye al dominio propio.</p>
+<h3 id="11-4-dominio-propio">11.4 Dominio propio</h3>
+<p><code>campuscode.com</code> está registrado en Hover y todavía usa los nameservers de Hover. Para publicarlo de forma permanente con Cloudflare Tunnel falta:</p>
+<ol><li>Crear el sitio en Cloudflare.</li><li>Reemplazar los nameservers en Hover.</li><li>Esperar el estado <strong>Active</strong>.</li><li>Crear el túnel y enrutar <code>campuscode.com</code> y <code>www</code>.</li><li>Verificar HTTPS y el health check.</li></ol>
+<hr>
+<h2 id="12-limitaciones-y-riesgos">12. Limitaciones y riesgos</h2>
+<table><thead><tr><th>Limitación</th><th>Impacto</th><th>Siguiente paso</th></tr></thead><tbody><tr><td>Datos ficticios</td><td>No permite conclusiones sobre usuarios reales.</td><td>Pilotear con usuarios y datos consentidos.</td></tr><tr><td>SQLite en una instancia</td><td>No escala horizontalmente.</td><td>Implementar adaptador PostgreSQL y probar la migración.</td></tr><tr><td>Rate limit en memoria</td><td>Se reinicia y no se comparte entre instancias.</td><td>Usar Redis, Upstash o una tabla compartida.</td></tr><tr><td>URL temporal</td><td>Depende de este PC y cambia al reiniciar.</td><td>Activar el dominio en Cloudflare.</td></tr><tr><td>Sin correo transaccional</td><td>No hay verificación ni recuperación de contraseña.</td><td>Integrar proveedor de correo.</td></tr><tr><td>Sin carga de archivos</td><td>Los entregables son enlaces.</td><td>Definir almacenamiento y validación.</td></tr><tr><td>Sin ATS</td><td>No hay seguimiento completo de candidaturas.</td><td>Diseñar el flujo con empresas.</td></tr><tr><td>Sin calificación automática</td><td>Las pruebas técnicas no se corrigen solas.</td><td>Implementar motor de evaluación.</td></tr><tr><td>IA puede equivocarse</td><td>Riesgo de respuestas incorrectas.</td><td>Revisión humana, moderación y política de uso.</td></tr><tr><td>Costo de IA</td><td>Cada consulta consume tokens.</td><td>Límites de gasto y cuotas por usuario.</td></tr><tr><td>Bundle de 1,27 MB</td><td>Carga inicial más pesada.</td><td>División por rutas con <code>import()</code>.</td></tr><tr><td>Sin auditoría de accesibilidad</td><td>Puede haber barreras no detectadas.</td><td>Ejecutar axe y pruebas con usuarios.</td></tr></tbody></table>
+<hr>
+<h2 id="13-hoja-de-ruta">13. Hoja de ruta</h2>
+<h3 id="corto-plazo-0-1-mes">Corto plazo (0–1 mes)</h3>
+<ul><li>Activar <code>campuscode.com</code> con Cloudflare.</li><li>Programar copias de seguridad y probar la restauración.</li><li>Rotar contraseñas de demostración antes de abrir el sitio.</li><li>Configurar límites de gasto y cuotas para la IA.</li><li>Añadir monitoreo básico y alertas.</li></ul>
+<h3 id="mediano-plazo-1-3-meses">Mediano plazo (1–3 meses)</h3>
+<ul><li>Implementar el adaptador PostgreSQL/Supabase y migrar la semilla.</li><li>Añadir correo transaccional y recuperación de contraseña.</li><li>Rate limit compartido.</li><li>Calificación automática de pruebas técnicas.</li><li>Onboarding de empresas con un flujo revisado.</li></ul>
+<h3 id="largo-plazo-3-6-meses">Largo plazo (3–6 meses)</h3>
+<ul><li>Analítica de producto con consentimiento.</li><li>Auditoría de accesibilidad y matriz de navegadores.</li><li>PWA o aplicación móvil.</li><li>Integraciones institucionales.</li><li>Piloto con estudiantes y empresas reales.</li></ul>
+<hr>
+<h2 id="14-conclusiones">14. Conclusiones</h2>
+<p>CampusCode demuestra que es posible integrar en una sola aplicación la práctica académica, el progreso personal, la gestión de recursos y la conexión con empresas, con una base técnica verificable y una experiencia usable en móvil y escritorio.</p>
+<p>El valor de la entrega está en tres cosas:</p>
+<ol><li><strong>Funciona:</strong> se puede recorrer con tres roles y ejecutar flujos completos.</li><li><strong>Es verificable:</strong> hay pruebas, documentación y evidencia reproducible.</li><li><strong>Es honesta:</strong> distingue datos ficticios, modo local y modo live, y declara lo que falta.</li></ol>
+<p>Todavía no es un producto listo para producción a escala. Es una <strong>demostración full-stack sólida</strong>, apta para presentación académica, validación con usuarios y una siguiente etapa de migración a infraestructura real.</p>
+<hr>
+<h2 id="15-guion-de-presentacion-5-7-minutos">15. Guion de presentación (5–7 minutos)</h2>
+<h3 id="diapositiva-1-gancho-30-s">Diapositiva 1 — Gancho (30 s)</h3>
+<blockquote><p>“Un estudiante puede tener apuntes, ejercicios, materias y oportunidades en cinco lugares distintos. CampusCode los une en una sola experiencia.”</p></blockquote>
+<h3 id="diapositiva-2-problema-45-s">Diapositiva 2 — Problema (45 s)</h3>
+<ul><li>Práctica dispersa.</li><li>Progreso invisible.</li><li>Gestión manual de equipos.</li><li>Poca conexión entre aprendizaje y empresa.</li></ul>
+<h3 id="diapositiva-3-solucion-1-min">Diapositiva 3 — Solución (1 min)</h3>
+<p>Mostrar los cuatro pilares: <strong>aprender, organizar, acceder y conectar</strong>.</p>
+<h3 id="diapositiva-4-demo-2-min">Diapositiva 4 — Demo (2 min)</h3>
+<p>Recorrido sugerido:</p>
+<ol><li>Landing y catálogo.</li><li>Ejercicio con pista y procedimiento.</li><li>Asistente con una pregunta académica.</li><li>Panel de progreso y materias personales.</li><li>Préstamo de un computador.</li><li>Reto, vacante y prueba técnica.</li><li>Panel de administración.</li></ol>
+<h3 id="diapositiva-5-arquitectura-y-seguridad-45-s">Diapositiva 5 — Arquitectura y seguridad (45 s)</h3>
+<ul><li>React + Express + SQLite.</li><li>Tres roles y autorización en el servidor.</li><li>Clave de IA solo en el servidor.</li></ul>
+<h3 id="diapositiva-6-ia-45-s">Diapositiva 6 — IA (45 s)</h3>
+<ul><li>Gemini 3.5 Flash en modo live.</li><li>Guía local cuando no hay credenciales.</li><li>El asistente explica, no reemplaza al docente.</li></ul>
+<h3 id="diapositiva-7-resultados-y-hoja-de-ruta-45-s">Diapositiva 7 — Resultados y hoja de ruta (45 s)</h3>
+<ul><li>14/14 pruebas.</li><li>Responsive 390/820/1440.</li><li>Próximo paso: dominio, PostgreSQL y backups.</li></ul>
+<h3 id="diapositiva-8-cierre-15-s">Diapositiva 8 — Cierre (15 s)</h3>
+<blockquote><p>“CampusCode no promete tutorías ni métricas inventadas. Promete una base real para aprender, organizar y conectar.”</p></blockquote>
+<hr>
+<h2 id="16-preguntas-frecuentes-de-la-defensa">16. Preguntas frecuentes de la defensa</h2>
+<p><strong>¿La IA es real?</strong> Sí. Está conectada a Gemini 3.5 Flash y se verificó una consulta real desde la URL pública. La clave vive solo en el servidor. Sin clave, la app muestra una guía local etiquetada.</p>
+<p><strong>¿Las empresas y vacantes son reales?</strong> No. Son datos de demostración identificados como tales. No representan alianzas ni procesos de selección.</p>
+<p><strong>¿Ofrecen tutorías?</strong> No. CampusCode no tiene tutores, reservas ni pagos por sesión. El acompañamiento se limita al banco de ejercicios, el asistente y los retos.</p>
+<p><strong>¿Está listo para producción?</strong> No a escala. Es una demo funcional. Faltan dominio permanente, PostgreSQL, backups, correo, observabilidad y auditoría de seguridad.</p>
+<p><strong>¿Por qué SQLite?</strong> Porque permite una demo reproducible sin infraestructura externa. El esquema PostgreSQL está preparado como referencia, pero la migración requiere un adaptador y pruebas.</p>
+<p><strong>¿Cómo protegen los datos?</strong> bcrypt, JWT en cookie <code>httpOnly</code>, roles, propiedad de recursos, validación de entrada, SQL parametrizado, CSRF por origen y rate limit.</p>
+<p><strong>¿Qué pasa si se cae el PC?</strong> La URL temporal deja de funcionar. Para disponibilidad permanente se necesita un dominio con túnel en un equipo siempre encendido o un VPS.</p>
+<hr>
+<h2 id="17-anexos">17. Anexos</h2>
+<h3 id="17-1-rutas-principales">17.1 Rutas principales</h3>
+<table><thead><tr><th>Ruta</th><th>Descripción</th></tr></thead><tbody><tr><td><code>/</code></td><td>Landing y propuesta de valor</td></tr><tr><td><code>/catalogo</code></td><td>Catálogo de carreras y materias</td></tr><tr><td><code>/ejercicios</code></td><td>Banco de ejercicios</td></tr><tr><td><code>/asistente</code></td><td>Asistente académico</td></tr><tr><td><code>/retos</code></td><td>Retos de empresas</td></tr><tr><td><code>/empresas</code></td><td>Portal de empresas, vacantes y pruebas</td></tr><tr><td><code>/dashboard</code></td><td>Panel del estudiante</td></tr><tr><td><code>/materias</code></td><td>Materias personales</td></tr><tr><td><code>/prestamo-pcs</code></td><td>Préstamo de computadores</td></tr><tr><td><code>/empresa</code></td><td>Panel de empresa</td></tr><tr><td><code>/admin</code></td><td>Panel de administración</td></tr></tbody></table>
+<h3 id="17-2-comandos-utiles">17.2 Comandos útiles</h3>
+<pre><code class="language-powershell">npm install
+npm run seed:reset
+npm run dev
+npm run typecheck
+npm run lint
+npm test
+npm run build
+npm run start:production</code></pre>
+<h3 id="17-3-documentacion-de-referencia">17.3 Documentación de referencia</h3>
+<ul><li><code>README.md</code>: instalación, rutas, API y configuración.</li><li><code>docs/ESTADO.md</code>: estado y pendientes.</li><li><code>docs/PRUEBAS.md</code>: comandos, resultados y evidencia.</li><li><code>docs/IA.md</code>: configuración del asistente.</li><li><code>docs/BASE-DE-DATOS.md</code>: SQLite, PostgreSQL y Supabase.</li><li><code>docs/PRODUCCION.md</code>: checklist de despliegue.</li><li><code>docs/DOMINIO.md</code>: Cloudflare Tunnel y dominio.</li><li><code>docs/evidence/</code>: capturas de la interfaz.</li></ul>
+<hr>
+<p><strong>Fin del informe.</strong></p>
+  </main>
+</body>
+</html>

@@ -1,0 +1,43 @@
+# Render Blueprint para CampusCode.
+# Crea el servicio web gratuito y deja las variables listas.
+# La clave de IA se pide al aplicar el Blueprint (sync: false).
+services:
+  - type: web
+    name: campuscode-co
+    runtime: node
+    plan: free
+    region: virginia
+    buildCommand: npm ci && npm run build
+    startCommand: npm start
+    healthCheckPath: /api/health
+    autoDeploy: true
+    envVars:
+      - key: NODE_VERSION
+        value: 24
+      - key: NODE_ENV
+        value: production
+      # Render genera un secreto distinto para cada servicio.
+      - key: JWT_SECRET
+        generateValue: true
+      # Contraseña aleatoria del administrador. Se puede ver en el panel de Render.
+      - key: ADMIN_PASSWORD
+        generateValue: true
+      # SQLite efímero: los datos de demostración se recargan al reiniciar.
+      # Para persistencia real hace falta un disco (plan pago) o PostgreSQL.
+      - key: DB_PATH
+        value: ./data/campuscode.db
+      - key: AI_PROVIDER
+        value: openai
+      # Se introduce manualmente en Render; nunca se guarda en el repositorio.
+      - key: AI_API_KEY
+        sync: false
+      - key: AI_BASE_URL
+        value: https://generativelanguage.googleapis.com/v1beta/openai
+      - key: AI_MODEL
+        value: gemini-3.5-flash
+      - key: AI_MAX_TOKENS
+        value: "4096"
+      - key: AI_TIMEOUT_MS
+        value: "45000"
+      - key: AI_MODE
+        value: live
