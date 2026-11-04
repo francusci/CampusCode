@@ -16,6 +16,9 @@ services:
         value: 24
       - key: NODE_ENV
         value: production
+      # Netlify sirve el frontend y reenvía /api/* a este servicio.
+      - key: APP_ORIGIN
+        value: https://mi-campuscode.netlify.app,https://campuscode-co.onrender.com
       # Render genera un secreto distinto para cada servicio.
       - key: JWT_SECRET
         generateValue: true
