@@ -2195,9 +2195,10 @@ export function seedDatabase(db) {
   // El administrador usa ADMIN_PASSWORD (Render lo genera aleatoriamente).
   const demoPassword = process.env.DEMO_PASSWORD || 'Campus123!';
   const adminPassword = process.env.ADMIN_PASSWORD || demoPassword;
-  const passwordHash = bcrypt.hashSync(demoPassword, 10);
+  // Costo 8 acelera el sembrado inicial en Render sin afectar a las cuentas demo.
+  const passwordHash = bcrypt.hashSync(demoPassword, 8);
   const adminPasswordHash = bcrypt.hashSync(adminPassword, 10);
-  const hashFor = () => bcrypt.hashSync(crypto.randomBytes(18).toString('hex'), 10);
+  const hashFor = () => bcrypt.hashSync(crypto.randomBytes(18).toString('hex'), 8);
 
   const deleteOrder = [
     'reports',

@@ -12,7 +12,7 @@ import aiRoutes from './routes/ai.js';
 import campusRoutes from './routes/campus.js';
 import recruitmentRoutes from './routes/recruitment.js';
 
-export function createApp() {
+export function createApp({ seedPromise } = {}) {
   const app = express();
   const isProduction = process.env.NODE_ENV === 'production';
   const root = process.cwd();
@@ -65,6 +65,25 @@ export function createApp() {
   });
 
   app.use(attachUser);
+
+  // El sembrado de datos demo puede tardar unos segundos en Render.
+  // El servidor arranca primero y /api/health responde de inmediato; las
+  // rutas de API esperan a que los datos estén listos.
+  if (seedPromise) {
+    app.use(async (req, res, next) => {
+      if (req.path.startsWith('/api/') && req.path !== '/api/health') {
+        try {
+          await seedPromise;
+        } catch (error) {
+          return res.status(500).json({
+            error: 'Error al cargar los datos de demostración.',
+            code: 'SEED_ERROR',
+          });
+        }
+      }
+      next();
+    });
+  }
 
   app.get('/api/health', (_req, res) => {
     res.json({ status: 'ok', service: 'campuscode-api', time: new Date().toISOString() });

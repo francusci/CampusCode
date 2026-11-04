@@ -8,9 +8,17 @@ if (isProduction && !process.env.JWT_SECRET) {
 }
 
 initDatabase();
-await ensureSeed();
-
-const app = createApp();
+// El sembrado se ejecuta en segundo plano para que el servidor responda
+// rápidamente en Render y el health check no falle por tiempo de arranque.
+const seedPromise = ensureSeed()
+  .then(() => {
+    console.log('[campuscode] Datos de demostración cargados.');
+  })
+  .catch((error) => {
+    console.error('[campuscode] Error al cargar datos de demostración:', error);
+    throw error;
+  });
+const app = createApp({ seedPromise });
 const port = Number(process.env.PORT || 4000);
 
 const server = app.listen(port, () => {
@@ -26,6 +34,8 @@ const server = app.listen(port, () => {
     console.log(`[campuscode] Cuentas demo: estudiante@campuscode.co · empresa@campuscode.co · admin@campuscode.co (${demoPassword})`);
   }
 });
+
+seedPromise.catch(() => process.exit(1));
 
 function shutdown(signal) {
   console.log(`\n[campuscode] Cerrando (${signal})...`);
