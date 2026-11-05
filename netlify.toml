@@ -12,7 +12,7 @@
 # Backend temporal en este PC (túnel Cloudflare) para que el login funcione ya.
 [[redirects]]
   from = "/api/*"
-  to = "https://pool-based-rapids-federation.trycloudflare.com/api/:splat"
+  to = "https://mobility-sail-rochester-thanksgiving.trycloudflare.com/api/:splat"
   status = 200
   force = true
 
